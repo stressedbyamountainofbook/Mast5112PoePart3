@@ -1,38 +1,35 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
-import { MenuItem } from './assets/types'; // Import MenuItem type
+import { MenuItem } from './assets/types'; 
 
 interface MenuItemDescriptionPageProps {
-  route: any; // route prop to get item data
-  navigation: any; // navigation prop
-  cart: MenuItem[]; // Add cart prop
-  setCart: React.Dispatch<React.SetStateAction<MenuItem[]>>; // Add setCart prop
+  route: any; 
+  navigation: any; 
+  cart: MenuItem[]; 
+  setCart: React.Dispatch<React.SetStateAction<MenuItem[]>>; 
 }
 
 const MenuItemDescriptionPage: React.FC<MenuItemDescriptionPageProps> = ({ route, navigation, cart, setCart }) => {
-  const { item } = route.params; // Get the item data from the route
+  const { item } = route.params; 
 
   const handleAddToCart = () => {
     setCart([...cart, item]); // Add item to cart
-    navigation.goBack(); // Go back to the previous screen after adding item to cart
+    navigation.goBack(); //return to previous page after adding item to cart
   };
 
   return (
     <View style={styles.container}>
-      {/* Display the image of the item */}
-      <Image source={item.image} style={styles.image} />
-
+     <Image source={item.image} style={styles.image} />
       <Text style={styles.title}>{item.name}</Text>
       <Text style={styles.description}>{item.description}</Text>
       <Text style={styles.price}>R{item.price.toFixed(2)}</Text>
 
-      {/* Green button for adding to cart with rounded corners */}
+      {/* buy now  button for adding to cart*/}
       <TouchableOpacity style={[styles.button, styles.addToCartButton]} onPress={handleAddToCart}>
         <Text style={styles.buttonText}>Add to Cart</Text>
       </TouchableOpacity>
-
-      {/* Button for going back to the menu with rounded corners */}
-      <TouchableOpacity style={[styles.button, styles.backButton]} onPress={() => navigation.goBack()}>
+        {/* back button to return to menu*/}
+         <TouchableOpacity style={[styles.button, styles.backButton]} onPress={() => navigation.goBack()}>
         <Text style={styles.buttonText}>Back to Menu</Text>
       </TouchableOpacity>
     </View>
@@ -44,7 +41,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
     backgroundColor: '#fff',
-    justifyContent: 'space-around', // Adjust to space elements out more evenly
+    justifyContent: 'space-around',
   },
   image: {
     width: '100%',
@@ -70,15 +67,15 @@ const styles = StyleSheet.create({
   button: {
     paddingVertical: 12,
     paddingHorizontal: 20,
-    borderRadius: 25, // Rounded corners
+    borderRadius: 25, 
     alignItems: 'center',
     marginVertical: 10,
   },
   addToCartButton: {
-    backgroundColor: 'green', // Green button color
+    backgroundColor: 'green', 
   },
   backButton: {
-    backgroundColor: 'gray', // Gray button color
+    backgroundColor: 'gray', 
   },
   buttonText: {
     color: 'white',

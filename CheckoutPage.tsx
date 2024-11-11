@@ -3,26 +3,23 @@ import { View, Text, StyleSheet, TouchableOpacity, Alert } from 'react-native';
 import { MenuItem } from './assets/types';
 
 interface CheckoutPageProps {
-  route: any; // Route prop to get cart data
-  navigation: any; // Navigation prop
+  route: any; 
+  navigation: any; 
 }
 
 const CheckoutPage: React.FC<CheckoutPageProps> = ({ route, navigation }) => {
-  const { cart } = route.params; // Get cart data from route params
+  const { cart } = route.params; 
 
-  // Function to handle the order confirmation
   const handleOrderConfirmation = () => {
     if (cart.length === 0) {
       Alert.alert('Your cart is empty. Please add items before checking out.');
     } else {
-      // You could add logic to finalize the order here (e.g., payment, saving to DB, etc.)
       Alert.alert('Order confirmed! Thank you for your purchase.');
-      // After confirming, you can navigate back to the home page or menu
       navigation.navigate('Home');
     }
   };
 
-  // Calculate total price of items in the cart
+  // Calculation of total price of items in the cart
   const totalPrice = cart.reduce((total: number, item: MenuItem) => total + item.price, 0);
 
   return (

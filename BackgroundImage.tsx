@@ -1,12 +1,12 @@
 import React from 'react';
 import { ImageBackground, View, StyleSheet, Text, ViewStyle, ImageStyle } from 'react-native';
 
-// Define types for the props
+
 interface BackgroundImageProps {
-  source: any;             // The image source (local or remote)
-  children: React.ReactNode; // Content to be displayed on top of the background image
-  style?: ViewStyle;       // Optional style for the container
-  imageStyle?: ImageStyle; // Optional style for the background image itself
+  source: any;            
+  children: React.ReactNode; 
+  style?: ViewStyle;       
+  imageStyle?: ImageStyle; 
 }
 
 const BackgroundImage: React.FC<BackgroundImageProps> = ({
@@ -18,21 +18,19 @@ const BackgroundImage: React.FC<BackgroundImageProps> = ({
   return (
     <ImageBackground
       source={source}
-      style={[styles.imageBackground, style]} // Apply custom styles if provided
-      imageStyle={imageStyle} // Apply image-specific styles
-    >
+      style={[styles.imageBackground, style]} 
+      imageStyle={imageStyle} >
       {children}
     </ImageBackground>
   );
 };
 
-// Default styles
+
 const styles = StyleSheet.create({
   imageBackground: {
     flex: 1,
-    justifyContent: 'center',  // Center the content
-    alignItems: 'center',      // Align items in the center horizontally
-  },
+    justifyContent: 'center',  
+    alignItems: 'center',       },
 });
 
 export default BackgroundImage;

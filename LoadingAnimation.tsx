@@ -4,7 +4,7 @@ import * as Animatable from 'react-native-animatable';
 
 const { width, height } = Dimensions.get('window');
 
-// Petal size and center coordinates
+
 const petalSize = 50;
 const centerX = width / 2;
 const centerY = height / 2;
@@ -13,18 +13,18 @@ const LoadingAnimation = () => {
   const [petalDripAnimation] = useState(new Animated.Value(0)); // For dripping animation
   const [bloomingProgress, setBloomingProgress] = useState(0); // Controls blooming of the flower
 
-  // Handle petal drip animation
+
   const dripAnim = petalDripAnimation.interpolate({
     inputRange: [0, 1],
-    outputRange: [0, 40], // Petal drop distance
+    outputRange: [0, 40],
   });
 
-  // Simulate the blooming process with an interval
+  
   React.useEffect(() => {
     const bloomingInterval = setInterval(() => {
       setBloomingProgress((prevProgress) => {
         if (prevProgress < 1) {
-          return prevProgress + 0.07; // Increase by 7% each interval
+          return prevProgress + 0.07; 
         }
         clearInterval(bloomingInterval);
         return 1;
@@ -36,20 +36,19 @@ const LoadingAnimation = () => {
 
   return (
     <View style={styles.container}>
-      {/* Flower Container */}
+     
       <View style={styles.flowerContainer}>
-        {/* Circle center of the flower */}
+       
         <View style={styles.centerCircle} />
 
-        {/* Loop to create 13 petals */}
-        {Array.from({ length: 13 }).map((_, index) => {
-          const angle = (index * 360) / 13; // Spread petals around 360°
-          const petalRotation = bloomingProgress * 360; // Rotate the petals as the flower blooms
-
+        
+        {Array.from({ length: 8 }).map((_, index) => {
+          const angle = (index * 360) / 8;
+          const petalRotation = bloomingProgress * 360;
           const petalStyle = {
             transform: [
-              { rotate: `${petalRotation + angle}deg` }, // Rotate petal
-              { translateX: petalSize }, // Move petal outward
+              { rotate: `${petalRotation + angle}deg` }, 
+              { translateX: petalSize }, 
             ],
           };
 
@@ -61,10 +60,10 @@ const LoadingAnimation = () => {
               direction="alternate"
               style={[styles.petal, petalStyle]}
             >
-              {/* The petal */}
+           
               <View style={styles.petalShape} />
 
-              {/* Drip when petal is downward */}
+             
               {angle === 180 && (
                 <Animated.View
                   style={[
@@ -80,7 +79,7 @@ const LoadingAnimation = () => {
         })}
       </View>
 
-      {/* Loading Text */}
+      
       <Text style={styles.loadingText}>Loading...</Text>
     </View>
   );
@@ -130,7 +129,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'blue',
     borderRadius: 5,
     position: 'absolute',
-    top: 40, // Start position of the drop
+    top: 40, 
   },
   loadingText: {
     fontSize: 24,

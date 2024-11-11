@@ -14,10 +14,10 @@ interface EditMenuListPageProps {
 const EditMenuListPage: React.FC<EditMenuListPageProps> = ({ navigation }) => {
   const [menuItems, setMenuItems] = useState<MenuItem[]>(initialMenuItems);
 
-  // Navigate to EditMenuItemPage with the correct parameters
+  
   const handleEdit = (item: MenuItem) => {
     navigation.navigate('EditMenuItemPage', {
-      itemId: item.id, // Pass the item's ID as the parameter
+      itemId: item.id, 
     });
   };
 

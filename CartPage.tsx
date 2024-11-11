@@ -18,7 +18,7 @@ const CartPage: React.FC<CartPageProps> = ({ cart, setCart, navigation }) => {
     if (cart.length === 0) {
       Alert.alert('Your cart is empty');
     } else {
-      // Pass the cart data to the CheckoutPage
+      
       navigation.navigate('CheckoutPage', { cart });
     }
   };

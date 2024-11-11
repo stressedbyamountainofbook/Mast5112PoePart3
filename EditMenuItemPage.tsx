@@ -3,7 +3,7 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'reac
 import { MenuItem } from './assets/types';
 import { RootStackParamList } from './assets/types';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { RouteProp } from '@react-navigation/native';  // Updated import
+import { RouteProp } from '@react-navigation/native';  
 
 type EditMenuItemPageNavigationProp = StackNavigationProp<RootStackParamList, 'EditMenuItemPage'>;
 type EditMenuItemPageRouteProp = RouteProp<RootStackParamList, 'EditMenuItemPage'>;
@@ -17,7 +17,7 @@ interface EditMenuItemPageProps {
 
 
 const EditMenuItemPage: React.FC<EditMenuItemPageProps> = ({ navigation, route, menuItems, setMenuItems }) => {
-  const { itemId } = route.params;  // Get itemId from route params
+  const { itemId } = route.params;  
 
   const itemToEdit = menuItems.find((item) => item.id === itemId);
 

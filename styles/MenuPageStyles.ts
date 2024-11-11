@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Semi-transparent black background
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
     paddingTop: 20,
     justifyContent: 'center',
     alignItems: 'center',
@@ -49,18 +49,18 @@ export const styles = StyleSheet.create({
   searchContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.7)', // Transparent black background for search bar
+    backgroundColor: 'rgba(0, 0, 0, 0.7)',
     paddingHorizontal: 10,
     marginBottom: 20,
     borderRadius: 5,
   },
   searchInput: {
     flex: 1,
-    color: 'white', // White text color for search input
+    color: 'white',
     padding: 10,
     marginLeft: 10,
     borderBottomWidth: 1,
-    borderBottomColor: 'white', // White border for search input
+    borderBottomColor: 'white',
   },
   menuContainer: {
     alignItems: 'center',
@@ -90,7 +90,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   menuItem: {
-    width: '45%', // Adjust the width to allow multiple items per row
+    width: '45%', 
     alignItems: 'center',
     marginBottom: 20,
   },
@@ -102,42 +102,42 @@ export const styles = StyleSheet.create({
   },
   itemName: {
     fontSize: 18,
-    color: 'white', // White color for item name
+    color: 'white', 
     marginBottom: 10,
   },
   itemPrice: {
     fontSize: 16,
-    color: 'white', // White color for item price
+    color: 'white', 
     marginBottom: 5,
   },
   button: {
-    backgroundColor: 'green', // Green background for the order button
+    backgroundColor: 'green', 
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 5,
   },
   buttonText: {
-    color: 'white', // White text for the order button
+    color: 'white', 
     fontSize: 16,
   },
 
-  // Stats Container for showing filtered results
+ 
   statsContainer: {
     marginTop: 20,
     padding: 10,
-    backgroundColor: '#fff', // White background for stats container
+    backgroundColor: '#fff', 
     borderRadius: 8,
     alignItems: 'center',
-    marginHorizontal: 20, // Margin for spacing
-    marginBottom: 10, // Optional: adds space at the bottom
+    marginHorizontal: 20,
+    marginBottom: 10, 
   },
   statsText: {
     fontSize: 16,
-    color: '#333', // Dark gray text color for stats
+    color: '#333', 
     textAlign: 'center',
   },
 
-  // Cart Button Styles (added)
+  // Cart Button Styles
   cartButton: {
     position: 'absolute',
     top: 20,
